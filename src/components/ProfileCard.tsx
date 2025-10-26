@@ -37,24 +37,26 @@ export function ProfileCard() {
           </button>
         </div>
         
-        <div className="flex flex-wrap gap-2 flex-1 w-full sm:w-auto">
-          {tabs.map((tab) => {
-            const Icon = tabIcons[tab];
-            return (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap ${
-                  activeTab === tab
-                    ? "bg-tab-active text-foreground shadow-lg"
-                    : "bg-tab-inactive text-muted-foreground hover:bg-tab-inactive/80"
-                }`}
-              >
-                <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                {tab}
-              </button>
-            );
-          })}
+        <div className="flex-1 w-full sm:w-auto">
+          <div className="bg-tab-inactive p-1 rounded-full flex gap-1 w-full sm:w-fit">
+            {tabs.map((tab) => {
+              const Icon = tabIcons[tab];
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-1 sm:flex-initial justify-center ${
+                    activeTab === tab
+                      ? "bg-tab-active text-foreground shadow-lg"
+                      : "text-muted-foreground hover:bg-tab-active/30"
+                  }`}
+                >
+                  <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                  {tab}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
