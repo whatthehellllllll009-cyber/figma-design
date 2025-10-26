@@ -37,22 +37,23 @@ export function ProfileCard() {
           </button>
         </div>
         
-        <div className="flex-1 w-full sm:w-auto">
-          <div className="bg-tab-inactive p-1 rounded-full flex gap-1 w-full sm:w-fit">
+        <div className="flex-1 w-full">
+          <div className="bg-tab-inactive p-1.5 sm:p-2 rounded-full flex gap-1 w-full">
             {tabs.map((tab) => {
               const Icon = tabIcons[tab];
               return (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-1 sm:flex-initial justify-center ${
+                  className={`px-3 py-2.5 sm:px-4 sm:py-3 md:px-6 md:py-3.5 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm md:text-base flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-1 justify-center ${
                     activeTab === tab
                       ? "bg-tab-active text-foreground shadow-lg"
                       : "text-muted-foreground hover:bg-tab-active/30"
                   }`}
                 >
-                  <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                  {tab}
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <span className="hidden xs:inline">{tab}</span>
+                  <span className="xs:hidden">{tab.split(' ')[0]}</span>
                 </button>
               );
             })}
