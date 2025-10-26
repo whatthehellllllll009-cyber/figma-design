@@ -41,8 +41,8 @@ All colors MUST be HSL.
     /* Widget specific tokens */
     --widget-bg: 215 15% 12%;
     --widget-border: 215 15% 18%;
-    --tab-active: 215 15% 20%;
-    --tab-inactive: 215 15% 10%;
+    --tab-active: 215 20% 15%;
+    --tab-inactive: 215 10% 8%;
     --text-primary: 0 0% 90%;
     --text-secondary: 0 0% 60%;
   }

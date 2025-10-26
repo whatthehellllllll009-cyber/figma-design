@@ -44,10 +44,10 @@ export function ProfileCard() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-lg md:rounded-xl font-medium transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap ${
+                className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-full font-semibold transition-all duration-300 text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 whitespace-nowrap ${
                   activeTab === tab
-                    ? "bg-tab-active text-foreground shadow-md"
-                    : "bg-tab-inactive text-muted-foreground hover:bg-secondary/50"
+                    ? "bg-tab-active text-foreground shadow-lg"
+                    : "bg-tab-inactive text-muted-foreground hover:bg-tab-inactive/80"
                 }`}
               >
                 <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
