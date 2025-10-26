@@ -66,49 +66,7 @@ export function Gallery() {
 
   return (
     <Card className="bg-widget-bg border-widget-border p-3 sm:p-4 md:p-5 rounded-xl md:rounded-2xl shadow-2xl w-full">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-4 md:mb-5">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between flex-1 gap-3 w-full">
-          <h2 className="text-base sm:text-lg md:text-xl font-semibold text-foreground bg-tab-active px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 rounded-lg md:rounded-xl">
-            Gallery
-          </h2>
-          
-          <div className="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end">
-            <Button
-              onClick={handleAddImage}
-              className="bg-secondary hover:bg-secondary/80 text-foreground px-3 py-1.5 sm:px-4 sm:py-2 rounded-full flex items-center gap-1.5 sm:gap-2 transition-all duration-300 text-xs sm:text-sm font-medium"
-            >
-              <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span className="hidden xs:inline">ADD IMAGE</span>
-              <span className="xs:hidden">ADD</span>
-            </Button>
-            
-            <div className="flex gap-1.5">
-              <button
-                onClick={handlePrevious}
-                disabled={!canScrollLeft}
-                className={`p-1.5 sm:p-2 rounded-full transition-all duration-300 ${
-                  canScrollLeft
-                    ? "bg-secondary hover:bg-secondary/80 text-foreground"
-                    : "bg-muted/30 text-muted-foreground cursor-not-allowed"
-                }`}
-              >
-                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
-              <button
-                onClick={handleNext}
-                disabled={!canScrollRight}
-                className={`p-1.5 sm:p-2 rounded-full transition-all duration-300 ${
-                  canScrollRight
-                    ? "bg-secondary hover:bg-secondary/80 text-foreground"
-                    : "bg-muted/30 text-muted-foreground cursor-not-allowed"
-                }`}
-              >
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
-            </div>
-          </div>
-        </div>
-        
+      <div className="flex items-center gap-3 mb-4 md:mb-5">
         <div className="flex flex-col gap-2">
           <button className="p-2 rounded-full bg-secondary/30 border border-widget-border hover:bg-secondary/50 transition-all flex-shrink-0">
             <HelpCircle className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
@@ -116,6 +74,50 @@ export function Gallery() {
           <button className="p-2 rounded-full bg-secondary/30 border border-widget-border hover:bg-secondary/50 transition-all flex-shrink-0">
             <LayoutGrid className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
           </button>
+        </div>
+
+        <div className="flex items-center gap-3 flex-1">
+          <div className="bg-tab-inactive px-4 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 rounded-full">
+            <h2 className="text-sm sm:text-base md:text-lg font-semibold text-foreground whitespace-nowrap">
+              Gallery
+            </h2>
+          </div>
+          
+          <div className="flex items-center gap-2 sm:gap-3 ml-auto">
+            <Button
+              onClick={handleAddImage}
+              className="bg-secondary/50 hover:bg-secondary/70 text-foreground px-3 py-2 sm:px-4 sm:py-2.5 rounded-full flex items-center gap-2 transition-all duration-300 text-xs sm:text-sm font-medium border border-widget-border shadow-md"
+            >
+              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden xs:inline">ADD IMAGE</span>
+              <span className="xs:hidden">ADD</span>
+            </Button>
+            
+            <div className="flex gap-2">
+              <button
+                onClick={handlePrevious}
+                disabled={!canScrollLeft}
+                className={`p-2 sm:p-2.5 rounded-full transition-all duration-300 ${
+                  canScrollLeft
+                    ? "bg-secondary/50 hover:bg-secondary/70 text-foreground border border-widget-border shadow-md"
+                    : "bg-muted/20 text-muted-foreground cursor-not-allowed border border-widget-border/50"
+                }`}
+              >
+                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={!canScrollRight}
+                className={`p-2 sm:p-2.5 rounded-full transition-all duration-300 ${
+                  canScrollRight
+                    ? "bg-secondary/50 hover:bg-secondary/70 text-foreground border border-widget-border shadow-md"
+                    : "bg-muted/20 text-muted-foreground cursor-not-allowed border border-widget-border/50"
+                }`}
+              >
+                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
